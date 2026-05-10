@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Stationery Management System</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+  <section id="loginBox" class="login-box">
+
+    <h2>Login System</h2>
+
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter username">
+    </div>
+
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter password">
+    </div>
+
+    <button id="loginBtn">Login</button>
+
+    <p class="login-info">
+      Demo Account:<br>
+      Username: <b>admin</b><br>
+      Password: <b>1234</b>
+    </p>
+
+  </section>
+
+  <!-- APP -->
+  <div id="app" class="app hidden">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <h2>SMS SYSTEM</h2>
+
+      <ul>
+        <li data-page="dashboard">Dashboard</li>
+        <li data-page="inventory">Inventory</li>
+        <li data-page="reports">Reports</li>
+        <li data-page="settings">Settings</li>
+        <li id="logoutBtn">Logout</li>
+      </ul>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- HEADER -->
+      <header class="header">
+
+        <h1>Stationery Management System</h1>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search items..."
+          >
+        </div>
+
+      </header>
+
+      <!-- DASHBOARD -->
+      <section id="dashboard" class="page">
+
+        <div class="cards">
+
+          <div class="card">
+            <h3>Total Items</h3>
+            <p id="totalItems">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Total Value</h3>
+            <p id="totalValue">$0</p>
+          </div>
+
+          <div class="card">
+            <h3>Total Discount</h3>
+            <p id="totalDiscount">$0</p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- FORM -->
+      <section class="form-section">
+
+        <h2>Add New Item</h2>
+
+        <div class="form-grid">
+
+          <input type="text" id="name" placeholder="Item Name">
+
+          <input type="number" id="qty" placeholder="Quantity">
+
+          <input type="text" id="category" placeholder="Category">
+
+          <input type="number" id="price" placeholder="Price">
+
+          <input type="number" id="discount" placeholder="Discount %">
+
+          <button id="addBtn">Add Item</button>
+
+        </div>
+
+      </section>
+
+      <!-- INVENTORY -->
+      <section id="inventory" class="page">
+
+        <div class="table-wrapper">
+
+          <table>
+
+            <thead>
+
+              <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+
+            </thead>
+
+            <tbody id="tableBody"></tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+      <!-- REPORTS -->
+      <section id="reports" class="page hidden">
+
+        <h2>Reports Section</h2>
+
+        <p>Total Items: <span id="rItems">0</span></p>
+
+        <p>Total Value: <span id="rValue">$0</span></p>
+
+      </section>
+
+      <!-- SETTINGS -->
+      <section id="settings" class="page hidden settings">
+
+        <h2>Settings</h2>
+
+        <button id="clearBtn">Clear All Data</button>
+
+        <button id="themeBtn">Toggle Dark Mode</button>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
